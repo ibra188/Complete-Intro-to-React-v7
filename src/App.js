@@ -1,13 +1,16 @@
 import React from "react";
+import {StrictMode} from "react";
 import './App.css';
 import SearchParams from "./Components/SearchParams";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Welcome World</h1>
-        <SearchParams />
-    </div>
-  );
-}
+const App = () => {
+    return(
+        <StrictMode>
+            <div>
+                <h1>Adopt Me!</h1>
+                <SearchParams />
+            </div>
+        </StrictMode>
+    );
+};
 export default App;
