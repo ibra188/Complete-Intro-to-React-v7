@@ -1,10 +1,12 @@
+import React, { useContext } from "react";
 import {useEffect, useState} from "react";
 import Pet from "../Components/Pet";
+import ThemeContext from "./ThemeContext";
 import Results from "./Results";
 import useBreedList from "./useBreedList";
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
-
+const [theme] = useContext(ThemeContext);
 const SearchParams = () => {
     const [Location, setLocation] = useState("");
     const [animal, setAnimal] = useState("");
@@ -85,7 +87,7 @@ const SearchParams = () => {
                         ))}
                     </select>
                 </label>
-                <button className="btn btn-primary">Submit</button>
+                <button style={{ backgroundColor: theme }}>Submit</button>;
             </form>
 
             <Results pets={pets} />;
